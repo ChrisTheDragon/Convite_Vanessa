@@ -10,7 +10,8 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Vanessa Machado | Convite de formatura">
   <meta property="og:description" content="Um convite especial para celebrar a formatura de Vanessa Machado.">
-  <meta property="og:image" content="https://raw.githubusercontent.com/ChrisTheDragon/Convite_Vanessa/main/assets/images/cover.png">
+  <meta property="og:image" content="https://convite-vanessa-kappa.vercel.app/assets/images/cover.png">
+  <meta property="og:image:secure_url" content="https://convite-vanessa-kappa.vercel.app/assets/images/cover.png">
   <meta property="og:image:alt" content="Convite de formatura de Vanessa Machado">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1724">
@@ -18,220 +19,13 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Vanessa Machado | Convite de formatura">
   <meta name="twitter:description" content="Um convite especial para celebrar a formatura de Vanessa Machado.">
-  <meta name="twitter:image" content="https://raw.githubusercontent.com/ChrisTheDragon/Convite_Vanessa/main/assets/images/cover.png">
+  <meta name="twitter:image" content="https://convite-vanessa-kappa.vercel.app/assets/images/cover.png">
   <meta name="twitter:image:alt" content="Convite de formatura de Vanessa Machado">
-  <link rel="image_src" href="https://raw.githubusercontent.com/ChrisTheDragon/Convite_Vanessa/main/assets/images/cover.png">
+  <link rel="image_src" href="https://convite-vanessa-kappa.vercel.app/assets/images/cover.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --royal: #1746a2;
-      --royal-dark: #0c2d70;
-      --silver: #aeb8c9;
-      --silver-light: #edf0f5;
-      --ink: #16233c;
-      --white: #fff;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--white);
-      font-family: "Montserrat", Arial, sans-serif;
-      line-height: 1.7;
-    }
-    img { display: block; width: 100%; }
-    a { color: inherit; }
-
-    .cover {
-      min-height: 100svh;
-      display: grid;
-      place-items: end center;
-      padding: 3rem 1.5rem 4rem;
-      color: var(--white);
-      text-align: center;
-      background:
-        linear-gradient(180deg, rgba(10, 31, 77, .12) 25%, rgba(7, 24, 62, .83) 100%),
-        url("assets/images/CAPA.jpeg") center / cover no-repeat;
-    }
-    .cover-content { max-width: 39rem; }
-    .eyebrow {
-      margin: 0 0 .45rem;
-      color: var(--silver-light);
-      font-size: .73rem;
-      font-weight: 600;
-      letter-spacing: .24em;
-      text-transform: uppercase;
-    }
-    h1, h2, h3, blockquote { font-family: "Cormorant Garamond", Georgia, serif; }
-    h1 {
-      margin: 0;
-      font-size: clamp(3.9rem, 15vw, 7.3rem);
-      font-weight: 500;
-      line-height: .8;
-      letter-spacing: -.04em;
-    }
-    .cover-subtitle {
-      margin: 1.2rem auto 0;
-      color: var(--silver-light);
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: clamp(1.45rem, 5vw, 2rem);
-    }
-    .scroll-cue {
-      display: inline-block;
-      margin-top: 2rem;
-      color: var(--white);
-      font-size: .68rem;
-      letter-spacing: .18em;
-      text-decoration: none;
-      text-transform: uppercase;
-    }
-    .scroll-cue::after {
-      content: "↓";
-      display: block;
-      margin-top: .35rem;
-      color: var(--silver);
-      font-size: 1.2rem;
-    }
-    .music-toggle {
-      position: fixed;
-      z-index: 10;
-      top: 1rem;
-      left: 1rem;
-      padding: .55rem .8rem;
-      border: 1px solid rgba(255, 255, 255, .65);
-      border-radius: 999px;
-      color: var(--white);
-      background: rgba(12, 45, 112, .78);
-      box-shadow: 0 .25rem .8rem rgba(12, 45, 112, .2);
-      cursor: pointer;
-      font: 600 .65rem "Montserrat", Arial, sans-serif;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      backdrop-filter: blur(5px);
-    }
-    .music-toggle[aria-pressed="true"] { background: var(--royal); }
-
-    .section { padding: clamp(4rem, 10vw, 8rem) 1.3rem; }
-    .section-inner { width: min(100%, 64rem); margin: 0 auto; }
-    .intro { text-align: center; }
-    .section-kicker {
-      color: var(--royal);
-      font-size: .68rem;
-      font-weight: 700;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-    }
-    h2 {
-      margin: .35rem 0 1.2rem;
-      color: var(--royal-dark);
-      font-size: clamp(2.4rem, 7vw, 4rem);
-      font-weight: 500;
-      line-height: .95;
-    }
-    .intro p { max-width: 41rem; margin: 0 auto; font-size: .95rem; }
-    .intro p + p { margin-top: 1rem; }
-
-    .details-section {
-      position: relative;
-      overflow: hidden;
-      background: var(--silver-light);
-    }
-    .details-section::before, .details-section::after {
-      position: absolute;
-      color: rgba(23, 70, 162, .06);
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 20rem;
-      line-height: 1;
-    }
-    .details-section::before { content: "V"; top: -3rem; left: -2rem; }
-    .details-section::after { content: "M"; right: -2rem; bottom: -5rem; }
-    .details-card {
-      position: relative;
-      z-index: 1;
-      max-width: 42rem;
-      margin: auto;
-      padding: clamp(2rem, 7vw, 4.5rem) clamp(1.4rem, 7vw, 4.5rem);
-      border: 1px solid var(--silver);
-      background: rgba(255, 255, 255, .9);
-      box-shadow: 0 1rem 3rem rgba(12, 45, 112, .08);
-      text-align: center;
-    }
-    .details-card h2 { margin-top: .5rem; }
-    .location { margin: 1.5rem 0; color: var(--royal-dark); font-weight: 700; }
-    .detail-row {
-      padding: 1.05rem 0;
-      border-top: 1px solid var(--silver-light);
-    }
-    .detail-label {
-      display: block;
-      margin-bottom: .15rem;
-      color: var(--royal);
-      font-size: .65rem;
-      font-weight: 700;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-    }
-    .detail-value { font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.55rem; }
-    .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; margin-top: 1.8rem; }
-    .button {
-      min-width: 10.5rem;
-      padding: .8rem 1.2rem;
-      border: 1px solid var(--royal);
-      color: var(--white);
-      background: var(--royal);
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .08em;
-      text-decoration: none;
-      text-transform: uppercase;
-      transition: background .2s, color .2s;
-    }
-    .button:hover { color: var(--royal); background: var(--white); }
-
-    .countdown-section { padding-top: 0; text-align: center; }
-    .countdown-section h2 { margin-bottom: 2rem; }
-    .countdown {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      max-width: 39rem;
-      margin: auto;
-      border-top: 1px solid var(--silver);
-      border-bottom: 1px solid var(--silver);
-    }
-    .count-item { padding: 1.25rem .4rem; }
-    .count-item + .count-item { border-left: 1px solid var(--silver-light); }
-    .count-number { display: block; color: var(--royal); font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(2.2rem, 8vw, 3.5rem); line-height: 1; }
-    .count-label { color: #647087; font-size: .6rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
-    .feature-image { width: min(100%, 52rem); max-height: 45rem; margin: 0 auto; object-fit: cover; object-position: center; }
-
-    .thanks { text-align: center; }
-    .thanks p { max-width: 42rem; margin: 0 auto 1.5rem; font-size: .95rem; }
-    .thanks-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; width: min(100%, 48rem); margin: 2.5rem auto; }
-    .thanks-gallery img { aspect-ratio: 2 / 3; object-fit: cover; }
-    blockquote {
-      max-width: 38rem;
-      margin: 2rem auto 1.5rem;
-      color: var(--royal-dark);
-      font-size: clamp(1.5rem, 4vw, 2.2rem);
-      font-style: italic;
-      line-height: 1.15;
-    }
-    cite { color: var(--royal); font-size: .7rem; font-style: normal; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
-    .signature { margin-top: 2rem; color: var(--royal-dark); font-family: "Cormorant Garamond", Georgia, serif; font-size: 2rem; }
-    .final-image { min-height: 31rem; background: url("assets/images/Background.jpeg") center / cover no-repeat; }
-    footer { padding: 1rem; color: var(--silver); background: var(--royal-dark); font-size: .62rem; letter-spacing: .14em; text-align: center; text-transform: uppercase; }
-
-    @media (max-width: 480px) {
-      .count-item { padding: 1rem .15rem; }
-      .count-number { font-size: 2rem; }
-      .count-label { font-size: .52rem; letter-spacing: .04em; }
-      .thanks-gallery { gap: .55rem; }
-    }
-  </style>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <audio id="background-music" loop preload="auto">
@@ -267,18 +61,19 @@
         <div class="detail-row">
           <span class="detail-label">Outorga</span>
           <span class="detail-value">Centro Cultural de Igarapé-Miri<br>18h</span>
+          <a class="button button-small" href="https://share.google/cmBJItnNtp96Ld0B7" target="_blank" rel="noopener noreferrer">Localização da outorga</a>
         </div>
         <div class="detail-row">
           <span class="detail-label">Jantar em comemoração</span>
           <span class="detail-value">Restaurante Lá Brasa<br>20h</span>
+          <a class="button button-small" href="https://share.google/cNlsem0YjjQrNjm3J" target="_blank" rel="noopener noreferrer">Localização do jantar</a>
         </div>
         <div class="detail-row">
           <span class="detail-label">Data</span>
           <span class="detail-value">18 de novembro de 2026</span>
         </div>
         <div class="actions">
-          <a class="button" href="#">Confirmar presença</a>
-          <a class="button" href="#">Ver localização</a>
+          <a class="button" href="https://wa.me/5591984310418?text=Oi%20vanessa%2C%20confirmo%20minha%20presen%C3%A7a%20no%20seu%20dia%20especial" target="_blank" rel="noopener noreferrer">Confirmar presença</a>
         </div>
       </div>
     </section>
@@ -319,65 +114,6 @@
   </main>
   <footer>Vanessa Machado · 2026</footer>
 
-  <script>
-    const music = document.getElementById("background-music");
-    const musicToggle = document.getElementById("music-toggle");
-    const openInvitation = document.querySelector(".scroll-cue");
-
-    function updateMusicButton(isPlaying) {
-      musicToggle.textContent = isPlaying ? "♫ Música ligada" : "♫ Música";
-      musicToggle.setAttribute("aria-label", isPlaying ? "Desligar música" : "Ligar música");
-      musicToggle.setAttribute("aria-pressed", String(isPlaying));
-    }
-
-    async function playMusic() {
-      try {
-        await music.play();
-        updateMusicButton(true);
-      } catch (error) {
-        console.error("Não foi possível reproduzir a música.", error);
-        musicToggle.textContent = "♫ Áudio indisponível";
-        musicToggle.setAttribute("aria-label", "Tentar ligar música novamente");
-      }
-    }
-
-    musicToggle.addEventListener("click", async () => {
-      if (music.paused) {
-        await playMusic();
-      } else {
-        music.pause();
-        updateMusicButton(false);
-      }
-    });
-
-    openInvitation.addEventListener("click", async (event) => {
-      event.preventDefault();
-      playMusic();
-      document.getElementById("introducao").scrollIntoView({ behavior: "smooth" });
-    });
-
-    const eventDate = new Date("2026-11-18T18:00:00-03:00").getTime();
-    const fields = {
-      days: document.getElementById("days"),
-      hours: document.getElementById("hours"),
-      minutes: document.getElementById("minutes"),
-      seconds: document.getElementById("seconds")
-    };
-
-    function updateCountdown() {
-      const remaining = Math.max(0, eventDate - Date.now());
-      const seconds = Math.floor(remaining / 1000);
-      const days = Math.floor(seconds / 86400);
-      const hours = Math.floor((seconds % 86400) / 3600);
-      const minutes = Math.floor((seconds % 3600) / 60);
-      const remainder = seconds % 60;
-      fields.days.textContent = String(days).padStart(2, "0");
-      fields.hours.textContent = String(hours).padStart(2, "0");
-      fields.minutes.textContent = String(minutes).padStart(2, "0");
-      fields.seconds.textContent = String(remainder).padStart(2, "0");
-    }
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-  </script>
+  <script src="js/script.js"></script>
 </body>
 </html>
