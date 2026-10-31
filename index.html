@@ -80,6 +80,24 @@
       color: var(--silver);
       font-size: 1.2rem;
     }
+    .music-toggle {
+      position: fixed;
+      z-index: 10;
+      top: 1rem;
+      left: 1rem;
+      padding: .55rem .8rem;
+      border: 1px solid rgba(255, 255, 255, .65);
+      border-radius: 999px;
+      color: var(--white);
+      background: rgba(12, 45, 112, .78);
+      box-shadow: 0 .25rem .8rem rgba(12, 45, 112, .2);
+      cursor: pointer;
+      font: 600 .65rem "Montserrat", Arial, sans-serif;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      backdrop-filter: blur(5px);
+    }
+    .music-toggle[aria-pressed="true"] { background: var(--royal); }
 
     .section { padding: clamp(4rem, 10vw, 8rem) 1.3rem; }
     .section-inner { width: min(100%, 64rem); margin: 0 auto; }
@@ -200,6 +218,10 @@
   </style>
 </head>
 <body>
+  <audio id="background-music" loop preload="auto">
+    <source src="assets/audio/audio.mp3" type="audio/mpeg">
+  </audio>
+  <button class="music-toggle" id="music-toggle" type="button" aria-label="Ligar música" aria-pressed="false">♫ Música</button>
   <header class="cover" id="inicio">
     <div class="cover-content">
       <p class="eyebrow">Convite de formatura</p>
@@ -218,6 +240,8 @@
         <p>Receber este convite significa que você faz parte da minha história e que eu gostaria muito de ter a sua presença comigo nessa noite tão importante.</p>
       </div>
     </section>
+
+    <img class="feature-image" src="assets/images/Primeiro%20Plano.jpeg" alt="Vanessa em primeiro plano">
 
     <section class="section details-section" id="informacoes">
       <div class="details-card">
@@ -243,6 +267,8 @@
       </div>
     </section>
 
+    <img class="feature-image" src="assets/images/Primeiro%20Plano%202.jpeg" alt="Vanessa em um segundo momento especial">
+
     <section class="section countdown-section" aria-labelledby="contagem-titulo">
       <div class="section-inner">
         <span class="section-kicker">Está chegando</span>
@@ -255,8 +281,6 @@
         </div>
       </div>
     </section>
-
-    <img class="feature-image" src="assets/images/Primeiro%20Plano.jpeg" alt="Vanessa em primeiro plano">
 
     <section class="section thanks">
       <div class="section-inner">
@@ -280,6 +304,42 @@
   <footer>Vanessa Machado · 2026</footer>
 
   <script>
+    const music = document.getElementById("background-music");
+    const musicToggle = document.getElementById("music-toggle");
+    const openInvitation = document.querySelector(".scroll-cue");
+
+    function updateMusicButton(isPlaying) {
+      musicToggle.textContent = isPlaying ? "♫ Música ligada" : "♫ Música";
+      musicToggle.setAttribute("aria-label", isPlaying ? "Desligar música" : "Ligar música");
+      musicToggle.setAttribute("aria-pressed", String(isPlaying));
+    }
+
+    async function playMusic() {
+      try {
+        await music.play();
+        updateMusicButton(true);
+      } catch (error) {
+        console.error("Não foi possível reproduzir a música.", error);
+        musicToggle.textContent = "♫ Áudio indisponível";
+        musicToggle.setAttribute("aria-label", "Tentar ligar música novamente");
+      }
+    }
+
+    musicToggle.addEventListener("click", async () => {
+      if (music.paused) {
+        await playMusic();
+      } else {
+        music.pause();
+        updateMusicButton(false);
+      }
+    });
+
+    openInvitation.addEventListener("click", async (event) => {
+      event.preventDefault();
+      playMusic();
+      document.getElementById("introducao").scrollIntoView({ behavior: "smooth" });
+    });
+
     const eventDate = new Date("2026-11-18T18:00:00-03:00").getTime();
     const fields = {
       days: document.getElementById("days"),
